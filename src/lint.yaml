@@ -2,7 +2,7 @@ $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 type: command
 display_name: lint-code
 experiment_name: diabetes-lint
-code: src/model/train.py
+code: src/model
 command: >
   pylint train.py --disable=C0114,C0115,C0116
 environment: azureml:custom-env:1
