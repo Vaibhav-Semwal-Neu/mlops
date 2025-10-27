@@ -1,15 +1,25 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: model
+type: command
+
+name: train-diabetes-model
+display_name: Train Diabetes Logistic Regression (vs-cluster)
+description: Train a logistic regression model using MLflow autologging
+
+code: .
 command: >-
-  python 
-  --
-  --
+  python train.py 
+  --training_data ${{inputs.training_data}} 
+  --reg_rate ${{inputs.reg_rate}}
+
+environment: azureml:custom-env:1
+
 inputs:
-  training_data: 
-    type: uri_folder 
-    path: 
+  training_data:
+    type: uri_folder
+    path: azureml://datastores/workspaceartifactstore/ExperimentRun/dcid.train-data-job4
   reg_rate: 0.01
-environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+
+#  Use your existing compute target
+compute: azureml:vs-cluster
+
+experiment_name: mlops-diabetes
