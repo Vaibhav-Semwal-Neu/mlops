@@ -1,8 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 type: command
 
-name: train-diabetes-model-5
-display_name: Train Diabetes Logistic Regression (vs-cluster)
+name: train-diabetes-model-6
+display_name: Train Diabetes Logistic Regression 1
 description: Train a logistic regression model using MLflow autologging
 
 code: .
