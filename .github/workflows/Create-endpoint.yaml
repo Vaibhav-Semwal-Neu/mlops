@@ -32,7 +32,7 @@ jobs:
      #   if: false
         run: |
              az ml online-deployment create \
-             --file src/deployment.yaml
+             --file src/deployment.yaml \
              --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
              --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
              --endpoint diabetes-endpoint \
