@@ -32,11 +32,9 @@ jobs:
      #   if: false
         run: |
              az ml online-deployment create \
-             --name First-deploy \
+             --file src/deployment.yaml
              --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
-             -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
+             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
              --endpoint diabetes-endpoint \
-             --model diabetes-model-2:1 \
-             --instance-type Standard_D2as_v4 \
-             --instance-count 1
+
 
