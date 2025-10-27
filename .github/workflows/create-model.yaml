@@ -22,9 +22,11 @@ jobs:
       - name: Run Azure ML job
         run: |
           az ml model create \
-          --file src/deployment.yaml
+          --name diabetes-model-2 \
           --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
-          --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+          -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
+          --version 1 \
+          --path "azureml://jobs/train-diabetes-model-6/outputs/artifacts/model" \
           --type mlflow_model \
           --description "Logistic regression model predicting diabetes"
 
