@@ -1,4 +1,4 @@
-name: Code checks
+name: Lint-code
 
 on:
   workflow_dispatch:
