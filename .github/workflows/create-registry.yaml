@@ -1,0 +1,31 @@
+name: Train model on Azure ML
+
+on: workflow_dispatch
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup Azure ML CLI
+        run: |
+          az extension add -n ml -y
+          az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          
+      - name: Run Azure ML job
+        run: |
+          az ml model create \
+          --name diabetes-logreg-model \
+          --version 1 \
+          --path "azureml://jobs/train-diabetes-model-5/outputs/artifacts/model" \
+          --type custom_model \
+          --description "Logistic regression model predicting diabetes"
+
+          
