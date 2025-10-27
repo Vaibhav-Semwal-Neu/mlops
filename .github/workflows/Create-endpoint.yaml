@@ -1,4 +1,4 @@
-name: Create Model on Azure ML
+name: Create Endpoint on Azure ML
 
 on: workflow_dispatch
 
