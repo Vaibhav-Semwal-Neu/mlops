@@ -19,7 +19,7 @@ inputs:
     path: azureml://datastores/workspaceblobstore/paths/UI/2025-10-24_050712_UTC
   reg_rate: 0.01
 
-#  Use your existing compute target
+# Use your existing compute target
 compute: azureml:vs-compute-cluster
 
 experiment_name: mlops-diabetes
