@@ -27,7 +27,7 @@ jobs:
           -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
           --version 1 \
           --path "azureml://jobs/train-diabetes-model-6/outputs/artifacts/model" \
-          --type MLFLOW \
+          --type mlflow_model \
           --description "Logistic regression model predicting diabetes"
 
           
