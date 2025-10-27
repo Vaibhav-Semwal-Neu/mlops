@@ -1,4 +1,4 @@
-name: Train model on Azure ML
+name: Lint code on Azure ML
 
 on: workflow_dispatch
 
