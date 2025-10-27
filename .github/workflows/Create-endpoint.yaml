@@ -23,13 +23,17 @@ jobs:
         run: |
             az ml online-endpoint create \
             --name diabetes-endpoint \
+            --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
+            -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
             --auth-mode key
 
       - name: Deploy Model to endpoint
         if: false
         run: |
              az ml online-deployment create \
-             --name blue \
+             --name First-deploy \
+             --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
+             -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
              --endpoint diabetes-endpoint \
              --model diabetes-model-2:1 \
              --instance-type Standard_D2as_v4 \
