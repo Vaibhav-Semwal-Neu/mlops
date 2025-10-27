@@ -1,4 +1,4 @@
-name: Create Registry on Azure ML
+name: Create Model on Azure ML
 
 on: workflow_dispatch
 
