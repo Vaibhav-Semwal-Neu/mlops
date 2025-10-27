@@ -1,0 +1,37 @@
+name: Create Model on Azure ML
+
+on: workflow_dispatch
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup Azure ML CLI
+        run: |
+          az extension add -n ml -y
+          az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          
+      - name: Create Endpoint
+        run: |
+            az ml online-endpoint create \
+            --name diabetes-endpoint \
+            --auth-mode key
+
+      - name: Deploy Model to endpoint
+        if: false
+        run: |
+             az ml online-deployment create \
+             --name blue \
+             --endpoint diabetes-endpoint \
+             --model diabetes-model-2:1 \
+             --instance-type Standard_D2as_v4 \
+             --instance-count 1
+
