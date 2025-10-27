@@ -5,5 +5,5 @@ experiment_name: diabetes-lint
 code: ./src
 command: >
   pylint train.py --disable=C0114,C0115,C0116
-environment: custom-env:1
+environment: azureml:custom-env:1
 compute: azureml:vs-compute-cluster
