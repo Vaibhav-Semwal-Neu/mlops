@@ -7,7 +7,7 @@ description: Train a logistic regression model using MLflow autologging
 
 code: .
 command: >-
-  python train.py 
+  python model/train.py 
   --training_data ${{inputs.training_data}} 
   --reg_rate ${{inputs.reg_rate}}
 
