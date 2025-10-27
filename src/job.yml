@@ -16,7 +16,7 @@ environment: azureml:custom-env:1
 inputs:
   training_data:
     type: uri_folder
-    path: azureml://datastores/workspaceartifactstore/ExperimentRun/dcid.train-data-job4
+    path: azureml://datastores/workspaceblobstore/paths/UI/2025-10-24_050712_UTC
   reg_rate: 0.01
 
 #  Use your existing compute target
