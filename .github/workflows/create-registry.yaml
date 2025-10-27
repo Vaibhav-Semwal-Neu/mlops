@@ -23,6 +23,7 @@ jobs:
         run: |
           az ml model create \
           --name diabetes-logreg-model \
+          --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
           --version 1 \
           --path "azureml://jobs/train-diabetes-model-5/outputs/artifacts/model" \
           --type custom_model \
