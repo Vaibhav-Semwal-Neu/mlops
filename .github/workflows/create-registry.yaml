@@ -26,7 +26,7 @@ jobs:
           --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
           -g ${{ secrets.AZURE_RESOURCE_GROUP }}
           --version 1 \
-          --path "azureml://jobs/"Train Diabetes Logistic Regression (vs-cluster)"/outputs/artifacts/model" \
+          --path "azureml://jobs/Train Diabetes Logistic Regression (vs-cluster)/outputs/artifacts/model" \
           --type custom_model \
           --description "Logistic regression model predicting diabetes"
 
