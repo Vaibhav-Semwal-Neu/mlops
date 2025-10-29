@@ -23,7 +23,7 @@ jobs:
         if: false
         run: |
             az ml online-endpoint create \
-            --name diabetes-endpoint \
+            --name diabetes-endpoint-1 \
             --workspace-name ${{ secrets.AZURE_ML_WORKSPACE }} \
             -g ${{ secrets.AZURE_RESOURCE_GROUP }} \
             --auth-mode key
