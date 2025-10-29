@@ -1,8 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 type: command
 
-name: train-diabetes-model-6
-display_name: Train-Diabetes-Logistic-Regression 
+name: train-diabetes-model-7
+display_name: Train-Diabetes-Logistic-Regression-1
 description: Train a logistic regression model using MLflow autologging
 
 code: .
@@ -22,4 +22,4 @@ inputs:
 # Use your existing compute target
 compute: azureml:vs-compute-cluster
 
-experiment_name: mlops-diabetes
+experiment_name: mlops-diabete-1
