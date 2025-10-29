@@ -11,7 +11,7 @@ command: >-
   --training_data ${{inputs.training_data}} 
   --reg_rate ${{inputs.reg_rate}}
 
-environment: azureml:custom-env:1
+environment: azureml:custom-env:2
 
 inputs:
   training_data:
