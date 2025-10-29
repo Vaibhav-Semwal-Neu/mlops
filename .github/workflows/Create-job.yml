@@ -1,4 +1,4 @@
-name: Train model on Azure ML
+name: Create Job on Azure ML
 
 on: workflow_dispatch
 
